@@ -127,7 +127,12 @@ Se creó el archivo bm.sh en la ruta /app luego se procedió a probarlo en 3 sis
 ![captura ejercicio 8](https://user-images.githubusercontent.com/32844919/35072529-3e9f8fd6-fbe5-11e7-842e-551997d6dfc3.PNG)
 
 
+## Ejercicio 9
+###Usar un miniframework REST para crear un servicio web y introducirlo en un contenedor, y componerlo con un cliente REST que sea el que finalmente se ejecuta y sirve como “frontend”.
 
+## Ejercicio 10
+###Reproducir los contenedores creados anteriormente usando un Dockerfile.
 
-
+## Ejercicio 11
+###Crear con docker-machine una máquina virtual local que permita desplegar contenedores y ejecutar en él contenedores creados con antelación.
 
