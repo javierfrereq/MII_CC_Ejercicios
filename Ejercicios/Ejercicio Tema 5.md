@@ -66,12 +66,12 @@ Se procede a modificar el archivo ```hosts``` de ```ansible``` que se encuentra 
 Se procede a crear un playbook de nombre provision.yml la cual tendrá la configuración necesaria para realizar el ejercicio.
 
 > -hosts: all
-sudo: yes
-task:
-apt pkg={{ item }} state=installed
-with_items:
--lxc 
-action: sudo lxc-create -n ubuntu-lxc -t ubuntu 
+> sudo: yes
+> task:
+> apt pkg={{ item }} state=installed
+> with_items:
+> -lxc 
+> action: sudo lxc-create -n ubuntu-lxc -t ubuntu 
 
 
 ## Ejercicio 4
