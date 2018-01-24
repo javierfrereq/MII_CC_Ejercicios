@@ -68,10 +68,10 @@ Se procede a crear un playbook de nombre provision.yml la cual tendrá la config
 > -hosts: all
 > sudo: yes
 > task:
->apt pkg={{ item }} state=installed
+> apt pkg={{ item }} state=installed
 > with_items:
->-lxc 
->action: sudo lxc-create -n ubuntu-lxc -t ubuntu 
+> -lxc 
+> action: sudo lxc-create -n ubuntu-lxc -t ubuntu 
 
 ## Ejercicio 4
 ### Buscar alguna demo interesante de Docker y ejecutarla localmente, o en su defecto, ejecutar la imagen anterior y ver cómo funciona y los procesos que se llevan a cabo la primera vez que se ejecuta y las siguientes ocasiones.
