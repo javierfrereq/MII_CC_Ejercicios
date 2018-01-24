@@ -1,4 +1,4 @@
-# Ejercicio 5 - Freddy Javier Frere Quintero
+# Ejercicio 3 - Freddy Javier Frere Quintero
 ## Ejercicio 1
 ### Crear una máquina virtual Ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.
 
