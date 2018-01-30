@@ -6,7 +6,7 @@ Procedemos a instalar Vagrant con el siguiente comando:
 
 ```sudo apt install vagrant```
 
-En la imagen detalla la versión que se instalo
+En la imagen detalla la versión que se instalo.
 
 ![captura1](https://user-images.githubusercontent.com/32844919/35360619-a7e14b00-015e-11e8-870d-ca15c0f1a7d4.PNG)
 
