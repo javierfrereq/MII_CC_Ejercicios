@@ -25,14 +25,59 @@ Nos conectaremos por medio de **ssh** a la VM:
 ## Ejercicio 2
 ### Instalar una máquina virtual ArchLinux o FreeBSD para KVM, otro hipervisor libre, usando Vagrant y conectar con ella.
 
+**Vagrantfile**
+
+```
+Vagrant.configure("2") do |config|
+    config.vm.box = "javierfrere"
+    config.vm.provider "virtualbox" do |v|
+    v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+end
+config.vm.provision "shell",
+    inline: "sudo apt-get install -y nginx && sudo service nginx restart && sudo service nginx status"
+end
+```
+
+Procedemos a provisionar 
+* `vagrant provision`
+
 ## Ejercicio 3
 ### Crear un script para provisionar de forma básica una máquina virtual para el proyecto que se esté llevando a cabo en la asignatura. 
-
+```
+Vagrant.configure("2") do |config|
+	config.vm.box = "ubuntu"
+	config.ssh.insert_key = false
+	config.vm.provision "shell",
+		inline: "sudo apt-get install -y python3-dev python3-pip git"
+		inline: "sudo pip install mysql-python"
+  end
+end
+```
 
 ## Ejercicio 4
-### Buscar alguna demo interesante de Docker y ejecutarla localmente, o en su defecto, ejecutar la imagen anterior y ver cómo funciona y los procesos que se llevan a cabo la primera vez que se ejecuta y las siguientes ocasiones.
-
-
-## Ejercicio 5
 ### Configurar tu máquina virtual usando `vagrant` con el provisionador ansible.
+
+1.- Descargamos una imagen a nuestra preferencia.
+```
+vagrant box add centos https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.1.0/centos-7.0-x86_64.box
+```
+
+2.- Iniciamos la imagen
+
+`vagrant init centos`
+
+3.- Creamos el Vagrantfile con su provisionamiento con Ansible.
+
+```
+Vagrant.configure("2") do |config|
+	config.vm.box = "centos"
+	config.ssh.insert_key = false
+	config.vm.provision "ansible" do |ansible|
+		ansible.playbook = "provision.yml"
+  end
+end
+```
+![ansible](https://user-images.githubusercontent.com/32844919/35768218-9e2e8e8c-08f8-11e8-9f4c-793b163e5f16.PNG)
+
 
